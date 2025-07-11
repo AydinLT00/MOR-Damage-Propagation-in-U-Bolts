@@ -25,6 +25,9 @@ The developed ROMs not only accurately predict the damage evolution but also pro
 | **POD-NN** | 4.82% | ≈ 3.67 milliseconds | **~5200x** |
 | **DL-ROM** | **2.78%** | *(similar to POD-NN)* | **~5000x+** |
 
+### Simulation results using DL-ROM technique
+![Simulation](media/animation.gif) 
+
 ### Parametric Study using the ROM
 The trained ROM allows us to perform studies that would be too costly with the FOM. The plot below shows how the total damage ($J$) changes as a function of the material's reaction coefficient ($r$) for different initial damage locations ($\delta$).
 
@@ -72,7 +75,7 @@ This is a non-linear approach using an autoencoder.
 ### 3. Analysis of the Quantity of Interest (QoI)
 We analyzed the overall damage, defined by the functional $J(u) = \frac{1}{T} \int_0^T \int_\Omega u(\mathbf{x}, t) d\mathbf{x} dt$. The **POD-NN model** proved highly reliable in predicting this value, with a relative error of only **0.62%** on the test set.
 
-![QoI Prediction](Jrom_podnn.png)
+![QoI Prediction](media/Jrom_podnn.png)
 *<p align="center">Figure: The POD-NN model's predictions for the functional J closely track the FOM ground truth across all test simulations.</p>*
 
 ---
