@@ -28,7 +28,7 @@ The developed ROMs not only accurately predict the damage evolution but also pro
 ### Parametric Study using the ROM
 The trained ROM allows us to perform studies that would be too costly with the FOM. The plot below shows how the total damage ($J$) changes as a function of the material's reaction coefficient ($r$) for different initial damage locations ($\delta$).
 
-![Parametric Study](https://i.imgur.com/k2HlG4x.png) 
+![Parametric Study](media/J-to-r.png) 
 *<p align="center">Figure: The total damage J increases with the reaction coefficient r. This plot was generated almost instantly using the ROM.</p>*
 
 ---
@@ -61,18 +61,18 @@ This method combines a linear subspace projection with a neural network.
 1.  **Proper Orthogonal Decomposition (POD):** We use SVD to extract an optimal basis of **n=80** modes that capture **99.99%** of the data's energy.
 2.  **Neural Network (NN):** A Deep Feedforward Neural Network learns the mapping from the input parameters $(\boldsymbol{\mu}, t)$ to the POD modal coefficients.
 
-![FOM vs ROM Comparison](https://i.imgur.com/z1Q4pC3.png)
+![FOM vs ROM Comparison](media/PODNN_compare.png)
 *<p align="center">Figure: Visual comparison between the ground truth FOM (left), the POD-NN prediction (center), and the difference (right).</p>*
 
 #### B. DL-ROM (Deep Learning ROM)
 This is a non-linear approach using an autoencoder.
-1.  **Autoencoder (AE):** An AE learns to compress the high-dimensional state into a low-dimensional latent space (**n=25**) and then reconstruct it.
+1.  **Autoencoder (AE):** An AE learns to compress the high-dimensional state into a low-dimensional latent space (**n=9**) and then reconstruct it.
 2.  **Dynamics Network ($\Phi$):** A separate neural network predicts the evolution of the latent state based on the input parameters.
 
 ### 3. Analysis of the Quantity of Interest (QoI)
 We analyzed the overall damage, defined by the functional $J(u) = \frac{1}{T} \int_0^T \int_\Omega u(\mathbf{x}, t) d\mathbf{x} dt$. The **POD-NN model** proved highly reliable in predicting this value, with a relative error of only **0.62%** on the test set.
 
-![QoI Prediction](https://i.imgur.com/hG9i5Bf.png)
+![QoI Prediction](Jrom_podnn.png)
 *<p align="center">Figure: The POD-NN model's predictions for the functional J closely track the FOM ground truth across all test simulations.</p>*
 
 ---
