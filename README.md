@@ -95,8 +95,8 @@ The project also uses the custom `dlroms` library provided by the course instruc
 ### Instructions
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-    cd YOUR_REPO
+    git clone https://github.com/AydinLT00/MOR-Damage-Propagation-in-U-Bolts.git
+    cd MOR-Damage-Propagation-in-U-Bolts
     ```
 
 2.  **Install dependencies:**
